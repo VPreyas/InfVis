@@ -6,3 +6,5 @@ root: docs/Introductie
 chapters:
 - file: docs/notebook
 - file: docs/DataCleaning
+- file: docs/Reflectie
+- file: docs/Taakverdeling

@@ -1,4 +1,4 @@
-# Voorbewerking van de Dataset
+# Dataset and Preprocessing
 
 We hebben gekozen voor de dataset 'City Happiness Index' van Kaggle.com. Deze dataset bevat verschillende kenmerken en metingen van steden wereldwijd, gericht op factoren die de totale geluksscore van elke stad kunnen beïnvloeden. 
 

@@ -1,4 +1,4 @@
-# Taakverdeling
+# Work Distribution
 
 Onze communicatie vond over het algemeen vooral plaats via WhatsApp. Daarnaast zijn we twee keer samengekomen in de werkgroep om te bekijken hoe we ervoor stonden en om een taakverdeling te maken. Bij het maken van de uiteindelijke versie hebben we een keer lang gebeld met alle groepsgenoten om alle problemen die we tegenkwamen te bespreken.
 

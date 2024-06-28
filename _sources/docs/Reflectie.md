@@ -1,4 +1,4 @@
-# Reflectie
+# Reflection
 
 ## Feedback van Peers
 

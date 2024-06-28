@@ -1,4 +1,4 @@
-# Introductie
+# Introduction
 
 De kwaliteit van ons dagelijks leven is essentieel, maar wat bepaalt die kwaliteit eigenlijk? In deze datastory onderzoeken we twee perspectieven die van invloed kunnen zijn op onze levenskwaliteit: groene ruimtes en economische welvaart.
 

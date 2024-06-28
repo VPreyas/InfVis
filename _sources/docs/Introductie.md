@@ -6,7 +6,7 @@ Voor stadsbewoners staat een dilemma centraal: moeten we meer groene ruimtes cre
 
 Deze datastory onderzoekt verschillende factoren die de levenskwaliteit in steden kunnen beïnvloeden, aan de hand van de dataset van Kaggle.com. We zullen specifiek de correlatie onderzoeken tussen groene gebieden en aspecten zoals luchtkwaliteit, mentale gezondheid en geluidsniveaus. Daarnaast kijken we naar de relatie tussen economische welvaart, mentale gezondheid en de kwaliteit van de gezondheidszorg.
 
-[Klik hier om naar de data story te gaan](DataStory.ipynb)
+[Klik hier om naar de data story te gaan](notebook.ipynb)
 
 **Auteurs**
 

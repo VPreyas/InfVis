@@ -1,4 +1,4 @@
-# Dataset and Preprocessing
+# Voorbewerking van de Dataset
 
 We hebben gekozen voor de dataset 'City Happiness Index' van Kaggle.com. Deze dataset bevat verschillende kenmerken en metingen van steden wereldwijd, gericht op factoren die de totale geluksscore van elke stad kunnen beïnvloeden. 
 
@@ -6,7 +6,7 @@ We hebben gekozen voor de dataset 'City Happiness Index' van Kaggle.com. Deze da
 
 ## Data Cleaning
 
-Tijdens het uitvoeren van de data cleaning hebben we vastgesteld dat elke stad slechts een enkele meting heeft in de dataset. Dit betekent dat elke stad uniek is en niet meerdere keren voorkomt in de dataset in verschillende jaren of maanden. Om deze reden hebben we de kolommen `Month` en `Year` uit de dataset verwijderd, omdat deze informatie niet relevant is voor onze analyse. Daarnaast hebben we de kolom `Traffic_Density' verwijderd, aangezien we deze variabele niet zullen gebruiken in ons onderzoek.
+Tijdens het uitvoeren van de data cleaning hebben we vastgesteld dat elke stad slechts een enkele meting heeft in de dataset. Dit betekent dat elke stad uniek is en niet meerdere keren voorkomt in de dataset in verschillende jaren of maanden. Om deze reden hebben we de kolommen `Month` en `Year` uit de dataset verwijderd, omdat deze informatie niet relevant is voor onze analyse. Daarnaast hebben we de kolom `Traffic_Density` verwijderd, aangezien we deze variabele niet zullen gebruiken in ons onderzoek.
 
 Verder zijn er in deze dataset geen ontbrekende waarden aangetroffen, wat betekent dat de dataset op dit punt onveranderd is gebleven.
 

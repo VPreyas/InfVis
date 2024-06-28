@@ -13,10 +13,14 @@ Na de ontvangen peer feedback bleek dat het aangepaste onderwerp niet voldoende 
 
 Nienke heeft het grootste deel van de coördinatie van de groep op zich genomen. Ze heeft alle tekst voor de uiteindelijke versie geschreven. Ook heeft ze de dataset opgeschoond voor de definitieve versie. Daarnaast heeft ze het hoofdonderwerp bedacht en aanzienlijk bijgedragen aan het denkproces rondom de perspectieven.
 
-## Peter
+## Martijn
+
+Martijn heeft zich vooral gericht op het vinden van de juiste datasets en heeft ook bijgedragen aan het bedenken van de verschillende soorten plots. Daarnaast heeft hij Nienke ondersteund in het denkproces en schrijfproces rondom de onderwerpen en perspectieven.
+
+## Senna
 
 Senna heeft voornamelijk de meeste plots gemaakt en ze interactief gemaakt. Daarnaast heeft hij geholpen bij het vinden van een geschikte dataset en heeft hij de dataset voor de draft schoongemaakt en samengevoegd.
 
-## Wim
+## Preyas
 
 Preyas heeft voornamelijk gezorgd voor de afwerking van het project. Hij heeft alles samengebracht in Jupyter Book en ervoor gezorgd dat het eindproduct er goed uitziet.

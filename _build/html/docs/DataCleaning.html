@@ -57,10 +57,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/DataCleaning';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="De impact van Groene ruimtes en Economische welvaart op de Levenskwaliteit" href="notebook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -141,7 +142,7 @@
 
   
 
-<a class="navbar-brand logo" href="home.html">
+<a class="navbar-brand logo" href="Introductie.html">
   
   
   
@@ -167,15 +168,16 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="home.html">
+                <a class="reference internal" href="Introductie.html">
                     Introductie
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebook.html">De impact van Groene ruimtes en Economische welvaart op de Levenskwaliteit</a></li>
 
 
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Voorbewerking van de Dataset</a></li>
 </ul>
 
     </div>
@@ -217,37 +219,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/yenchiah/jupyter-book-template/blob/main/docs/docs/DataCleaning.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -308,7 +279,7 @@
       
       
       
-      <li><a href="../_sources/docs/DataCleaning.ipynb" target="_blank"
+      <li><a href="../_sources/docs/DataCleaning.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +289,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -403,7 +374,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#omschrijving-van-de-variabelen">Omschrijving van de variabelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
 </ul>
             </nav>
         </div>
@@ -421,27 +393,41 @@ document.write(`
 <p><a class="reference external" href="https://www.kaggle.com/datasets/emirhanai/city-happiness-index-2024?select=train.csv">klik hier voor de gebruikte dataset</a></p>
 <section id="data-cleaning">
 <h2>Data Cleaning<a class="headerlink" href="#data-cleaning" title="Link to this heading">#</a></h2>
-<p>Tijdens het uitvoeren van de data cleaning hebben we vastgesteld dat elke stad slechts een enkele meting heeft in de dataset. Dit betekent dat elke stad uniek is en niet meerdere keren voorkomt in de dataset in verschillende jaren of maanden. Om deze reden hebben we de kolommen <strong> ‘Month’ </strong> en <strong> ‘Year’ </strong> uit de dataset verwijderd, omdat deze informatie niet relevant is voor onze analyse. Daarnaast hebben we de kolom <strong> ‘Traffic_Density’ </strong> verwijderd, aangezien we deze variabele niet zullen gebruiken in ons onderzoek.</p>
+<p>Tijdens het uitvoeren van de data cleaning hebben we vastgesteld dat elke stad slechts een enkele meting heeft in de dataset. Dit betekent dat elke stad uniek is en niet meerdere keren voorkomt in de dataset in verschillende jaren of maanden. Om deze reden hebben we de kolommen <strong>Month</strong> en <code class="docutils literal notranslate"><span class="pre">Year</span></code> uit de dataset verwijderd, omdat deze informatie niet relevant is voor onze analyse. Daarnaast hebben we de kolom <strong> ‘Traffic_Density’ </strong> verwijderd, aangezien we deze variabele niet zullen gebruiken in ons onderzoek.</p>
 <p>Verder zijn er in deze dataset geen ontbrekende waarden aangetroffen, wat betekent dat de dataset op dit punt onveranderd is gebleven.</p>
 </section>
-<section id="omschrijving-van-de-variabelen">
-<h2>Omschrijving van de variabelen<a class="headerlink" href="#omschrijving-van-de-variabelen" title="Link to this heading">#</a></h2>
-<p><strong> Discrete Variabele / Nominale schaal </strong></p>
+<section id="variable-descriptions">
+<h2>Variable descriptions<a class="headerlink" href="#variable-descriptions" title="Link to this heading">#</a></h2>
+<p>In terms of variable type and measurement scale, the variables in the final
+dataset can be classified under several combinations:</p>
 <ul class="simple">
-<li><p>City: De naam van de stad waarin de metingen zijn gedaan.</p></li>
+<li><p>Continuous / Ratio variables: <code class="docutils literal notranslate"><span class="pre">YearsCode</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code></p></li>
+<li><p>Discrete / Ordinal variables: <code class="docutils literal notranslate"><span class="pre">JobSat</span></code></p></li>
+<li><p>Discrete / Nominal variables: <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">OrgSize</span></code>, <code class="docutils literal notranslate"><span class="pre">LastNewJob</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Employment</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">JobSeek</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Student</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code>,
+<code class="docutils literal notranslate"><span class="pre">CodingActivities</span></code>, <code class="docutils literal notranslate"><span class="pre">DevType</span></code>, <code class="docutils literal notranslate"><span class="pre">LearnCodeFrom</span></code>, <code class="docutils literal notranslate"><span class="pre">LangPresent</span></code></p></li>
+<li><p>Discrete / Interval variables: <code class="docutils literal notranslate"><span class="pre">Year</span></code></p></li>
+<li><p>Discrete / Ratio variables: <code class="docutils literal notranslate"><span class="pre">Age</span></code></p></li>
 </ul>
-<p><strong> Continue Variabele / Ratio schaal </strong></p>
-<ul class="simple">
-<li><p>Decibel_Level: Het geluidsniveau in de stad, gemeten in decibel.</p></li>
-<li><p>Green_Space_Area: Het percentage van het stedelijk gebied dat uit groene ruimte bestaat.</p></li>
-<li><p>Air_Quality_Index: Een index die de kwaliteit van de lucht in de stad aangeeft.</p></li>
-<li><p>Healthcare_Index: Een index die de kwaliteit van de gezondheidszorg in de stad aangeeft.</p></li>
-<li><p>Cost_of_Living_Index: Een index die de kosten van levensonderhoud in de stad weergeeft in vergelijking met een referentiestad.</p></li>
-</ul>
-<p><strong> Continue Variabele / Ordinale schaal </strong></p>
-<ul class="simple">
-<li><p>Happiness_Score: De gemiddelde score die het geluk van de inwoners van de stad aangeeft van 1 - 10. (De Happiness Score wordt beschouwd als een ordinale variabele omdat het de rangorde van geluk aangeeft zonder exact meetbare intervalafstanden tussen scores. Hoewel hogere scores een hoger geluksniveau aangeven, is het niet mogelijk om te zeggen dat een score exact twee keer zoveel geluk vertegenwoordigt als een score die de helft ervan is.</p></li>
-</ul>
+<p>Variables that are currently being used are: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code>,
+<code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">DevType</span></code>.</p>
+</section>
+<section id="aggregations">
+<h2>Aggregations<a class="headerlink" href="#aggregations" title="Link to this heading">#</a></h2>
+<p>In general, most aggregations happen for calculating the salary gap between men
+and women relative to men. This is done by taking the mean salary for both men
+and women, subtracting these means and finally divide the total by the mean
+salary for men. In mathematical notation, this is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}\]</div>
+<p>In most graphs a percentage is being used, which is the above salary gap formula
+multiplied by 100.</p>
+<p><strong>Example:</strong> Let’s say in the Netherlands the average annual salary for men is
+€80,000 and for women €60,000. Then the salary gap will be 25% using
+the aforementioned calculation. If women are the ones making €80,000 per
+year and men make €60,000 per year, then the salary gap will be -33%. We
+call the percentage outcome a <em>male-favoured gap</em> if the percentage is positive.
+When the outcome is negative, it is considered a <em>female-favoured gap</em>.</p>
 </section>
 </section>
 
@@ -475,6 +461,15 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="notebook.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">De impact van Groene ruimtes en Economische welvaart op de Levenskwaliteit</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -492,7 +487,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-cleaning">Data Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#omschrijving-van-de-variabelen">Omschrijving van de variabelen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
 </ul>
   </nav></div>
 

@@ -6,41 +6,24 @@ We hebben gekozen voor de dataset 'City Happiness Index' van Kaggle.com. Deze da
 
 ## Data Cleaning
 
-Tijdens het uitvoeren van de data cleaning hebben we vastgesteld dat elke stad slechts een enkele meting heeft in de dataset. Dit betekent dat elke stad uniek is en niet meerdere keren voorkomt in de dataset in verschillende jaren of maanden. Om deze reden hebben we de kolommen **Month** en `Year` uit de dataset verwijderd, omdat deze informatie niet relevant is voor onze analyse. Daarnaast hebben we de kolom <strong> 'Traffic_Density' </strong> verwijderd, aangezien we deze variabele niet zullen gebruiken in ons onderzoek.
+Tijdens het uitvoeren van de data cleaning hebben we vastgesteld dat elke stad slechts een enkele meting heeft in de dataset. Dit betekent dat elke stad uniek is en niet meerdere keren voorkomt in de dataset in verschillende jaren of maanden. Om deze reden hebben we de kolommen `Month` en `Year` uit de dataset verwijderd, omdat deze informatie niet relevant is voor onze analyse. Daarnaast hebben we de kolom `Traffic_Density' verwijderd, aangezien we deze variabele niet zullen gebruiken in ons onderzoek.
 
 Verder zijn er in deze dataset geen ontbrekende waarden aangetroffen, wat betekent dat de dataset op dit punt onveranderd is gebleven.
 
-## Variable descriptions
+## Omschrijving van de variabelen
 
-In terms of variable type and measurement scale, the variables in the final
-dataset can be classified under several combinations:
+### Discrete Variabele / Nominale schaal
 
-- Continuous / Ratio variables: `YearsCode`, `YearsCodePro`, `Salary`
-- Discrete / Ordinal variables: `JobSat`
-- Discrete / Nominal variables: `Education`, `OrgSize`, `LastNewJob`,
-  `Employment`, `RespondentType`, `JobSeek`, `Gender`, `Student`, `Country`,
-  `CodingActivities`, `DevType`, `LearnCodeFrom`, `LangPresent`
-- Discrete / Interval variables: `Year`
-- Discrete / Ratio variables: `Age`
+- `City`: De naam van de stad waarin de metingen zijn gedaan.
 
-Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
-`Age`, `Education`, `RespondentType`, `Gender`, `Country` and `DevType`.
+### Continue Variabele / Ratio schaal
 
-## Aggregations
+- `Decibel_Level`: Het geluidsniveau in de stad, gemeten in decibel.
+- `Green_Space_Area`: Het percentage van het stedelijk gebied dat uit groene ruimte bestaat.
+- `Air_Quality_Index`: Een index die de kwaliteit van de lucht in de stad aangeeft.
+- `Healthcare_Index`: Een index die de kwaliteit van de gezondheidszorg in de stad aangeeft.
+- `Cost_of_Living_Index`: Een index die de kosten van levensonderhoud in de stad weergeeft in vergelijking met een referentiestad.
 
-In general, most aggregations happen for calculating the salary gap between men
-and women relative to men. This is done by taking the mean salary for both men
-and women, subtracting these means and finally divide the total by the mean
-salary for men. In mathematical notation, this is defined as:
+### Continue Variabele / Ordinale schaal
 
-$$\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}$$
-
-In most graphs a percentage is being used, which is the above salary gap formula
-multiplied by 100.
-
-**Example:** Let's say in the Netherlands the average annual salary for men is
-&euro;80,000 and for women &euro;60,000. Then the salary gap will be 25% using
-the aforementioned calculation. If women are the ones making &euro;80,000 per
-year and men make &euro;60,000 per year, then the salary gap will be -33%. We
-call the percentage outcome a *male-favoured gap* if the percentage is positive.
-When the outcome is negative, it is considered a *female-favoured gap*.
+- `Happiness_Score`: De gemiddelde score die het geluk van de inwoners van de stad aangeeft van 1 - 10. (De Happiness Score wordt beschouwd als een ordinale variabele omdat het de rangorde van geluk aangeeft zonder exact meetbare intervalafstanden tussen scores. Hoewel hogere scores een hoger geluksniveau aangeven, is het niet mogelijk om te zeggen dat een score exact twee keer zoveel geluk vertegenwoordigt als een score die de helft ervan is.
